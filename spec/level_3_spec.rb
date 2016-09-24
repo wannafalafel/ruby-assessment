@@ -1,32 +1,36 @@
 describe "Level 3" do
   describe "Nested Structures" do
-      let(:school) do 
+      let(:school) do
         # Using let makes a value named school available in all of the tests.
         # This hash will reset at the beginning of each test.
-        { 
+        {
           :name => "Happy Funtime School",
           :location => "NYC",
-          :instructors => [ 
+          :instructors => [
             {:name=>"Blake", :subject=>"Being Awesome" },
             {:name=>"Steven", :subject=>"Being Just 'OK'"},
             {:name=>"Jeff", :subject=>"Karaoke"}
           ],
-          :students => [ 
+          :students => [
             {:name => "Marissa", :grade => "B"},
             {:name=>"Billy", :grade => "F"},
             {:name => "Frank", :grade => "A"},
-            {:name => "Sophie", :grade => "C"}
+            {:name => "Sophie", :grade => "C"},
+
           ]
         }
       end
 
-      it "modifies the hash" do 
+      it "modifies the hash" do
       # modify school hash. Add key :founded_in with a value of 2013
+      school[:founded_in] = 2013
       expect(school[:founded_in]).to eq(2013)
     end
 
     it "adds to a nested array" do
       # Add a student to the end of the school's students' array.
+      
+
       expect(school[:students].count).to eq(5)
       expect(school[:students].last[:name]).to_not eq("Sophie")
     end
