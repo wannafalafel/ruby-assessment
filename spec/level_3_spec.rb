@@ -1,3 +1,4 @@
+require 'pry'
 describe "Level 3" do
   describe "Nested Structures" do
       let(:school) do
@@ -15,8 +16,7 @@ describe "Level 3" do
             {:name => "Marissa", :grade => "B"},
             {:name=>"Billy", :grade => "F"},
             {:name => "Frank", :grade => "A"},
-            {:name => "Sophie", :grade => "C"},
-
+            {:name => "Sophie", :grade => "C"}
           ]
         }
       end
@@ -27,9 +27,15 @@ describe "Level 3" do
       expect(school[:founded_in]).to eq(2013)
     end
 
+
     it "adds to a nested array" do
       # Add a student to the end of the school's students' array.
-      
+      new_student_hash = {:name => "Timothy", :grade => "A"}
+      school.each do |info, details|
+        if info == :students
+          
+        end
+      end
 
       expect(school[:students].count).to eq(5)
       expect(school[:students].last[:name]).to_not eq("Sophie")
